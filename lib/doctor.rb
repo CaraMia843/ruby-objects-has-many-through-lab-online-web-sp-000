@@ -12,4 +12,10 @@ class Doctor
   def self.all
     @@all
   end
+  
+  def appointments
+    Appointment.all.select do |appt|
+      appt.doctor == self
+    end
+  end
 end
